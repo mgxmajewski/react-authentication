@@ -94,6 +94,9 @@ export default class UserSignUp extends Component {
             console.log(`${username} is successfully signed up and authenticated!`);
           }
         })
+        .catch( err => { // handle rejected promises
+          console.log(err);
+        });
   }
 
   cancel = () => {
