@@ -1,9 +1,9 @@
 import config from './config';
 
 export default class Data {
-  api(path, method = 'GET', body = null) {
+  api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {
     const url = config.apiBaseUrl + path;
-  
+
     const options = {
       method,
       headers: {
@@ -14,6 +14,12 @@ export default class Data {
     if (body !== null) {
       options.body = JSON.stringify(body);
     }
+
+    // Check if auth is required
+    if (requiresAuth) {
+
+    }
+
 
     return fetch(url, options);
   }
@@ -30,7 +36,7 @@ export default class Data {
       throw new Error();
     }
   }
-  
+
   async createUser(user) {
     const response = await this.api('/users', 'POST', user);
     if (response.status === 201) {
