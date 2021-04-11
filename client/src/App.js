@@ -14,6 +14,7 @@ import UserSignOut from './components/UserSignOut';
 import Authenticated from './components/Authenticated';
 import withContext from "./Context";
 
+const HeaderWithContext = withContext(Header);
 const UserSignUpWithContext = withContext(UserSignUp);
 const UserSignInWithContext = withContext(UserSignIn);
 
@@ -21,7 +22,7 @@ const UserSignInWithContext = withContext(UserSignIn);
 export default () => (
   <Router>
     <div>
-      <Header />
+      <HeaderWithContext />
 
       <Switch>
         <Route exact path="/" component={Public} />
