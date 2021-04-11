@@ -83,6 +83,6 @@ export default class UserSignIn extends Component {
   }
 
   cancel = () => {
-
+    this.props.history.push('/');
   }
 }
