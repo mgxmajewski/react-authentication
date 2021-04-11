@@ -86,6 +86,14 @@ export default class UserSignUp extends Component {
       password,
     };
 
+    context.data.createUser(user)
+        .then( errors => {
+          if (errors.length) {
+            this.setState({ errors });
+          } else {
+            console.log(`${username} is successfully signed up and authenticated!`);
+          }
+        })
   }
 
   cancel = () => {
