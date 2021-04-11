@@ -12,7 +12,10 @@ export class Provider extends Component {
 
   render() {
     const value = {
-      data: this.data
+      data: this.data,
+      actions: { // Add the 'actions' property and object
+        signIn: this.signIn
+      }
     }
     return (
       <Context.Provider value={value}>
