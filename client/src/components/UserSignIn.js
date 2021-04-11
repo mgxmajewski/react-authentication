@@ -76,6 +76,10 @@ export default class UserSignIn extends Component {
             console.log(`SUCCESS! ${username} is now signed in!`);
           }
         })
+        .catch( err => {
+          console.log(err);
+          this.props.history.push('/error');
+        })
   }
 
   cancel = () => {
